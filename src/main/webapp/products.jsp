@@ -44,6 +44,8 @@
         <h3><%= product.getName() %></h3>
         <p><%= product.getDescription() %></p>
         <p><%= product.getUnitPrice() %>원</p>
+        <!-- ./는 현재폴더에서는 없어도 된다. -->
+        <p><a class="btn btn-secondary" role="button" href="./product.jsp?id=<%=product.getProductId() %>">상세정보 &raquo;</a></p>        
         </div>
     	<%
     	}    	
