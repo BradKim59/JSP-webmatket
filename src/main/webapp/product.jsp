@@ -39,7 +39,12 @@
         <div class="col-md-6">
         <h3><%= product.getName() %></h3>
         <p><%= product.getDescription() %></p>
-        <p><%= product.getUnitPrice() %></p>
+        <p><b>상품코드 : </b><span class="badge bg-danger">
+        <%= product.getProductId() %></span></p>
+        <p><b>제조사 : </b> <%= product.getMenufacturer() %></p>
+        <p><b>분류 : </b> <%= product.getCategory() %></p>
+        <p><b>재고수 : </b> <%= product.getUnitsInStock() %></p>
+        <p><%= product.getUnitPrice() %>원</p>
         <p>
         <a href="#" class="btn btn-info">상품주문 &raquo;</a>
 		<a href="./products.jsp" class="btn btn-secondary">상품목록 &raquo;</a>
