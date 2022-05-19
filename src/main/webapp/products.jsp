@@ -31,7 +31,6 @@
         	</h1>
     	</div>
 	</div>
-
 	<%
 	//ProductRepository repository = new ProductRepository();
 	List<Product> products = repository.getAllProducts();
@@ -43,8 +42,8 @@
     	%>	
         <div class="col-md-4">
         <h3><%= product.getName() %></h3>
-        <p><%=product.getDescription() %></p>
-        <p><%=product.getUnitPrice()%>원</p>
+        <p><%= product.getDescription() %></p>
+        <p><%= product.getUnitPrice() %>원</p>
         </div>
     	<%
     	}    	
