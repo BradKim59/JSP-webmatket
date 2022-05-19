@@ -46,6 +46,9 @@
 	    <div class="text-center">
 			<h3><%=	tagline	%></h3>
 			<%
+			//1초에 한번씩 새로고침
+			response.setIntHeader("refresh", 1);
+			
 			Date today = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 			out.println("헌재접속시간 : "+format.format(today));
