@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <!-- import 속성 사용방법 -->
+    <%@ page import= "java.util.List" %>
+<%@ page import= "dto.Product" %>
 <%@ page import= "java.util.Date" %>
 <%@ page import= "java.text.SimpleDateFormat" %>
 <!DOCTYPE html>
@@ -12,12 +14,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<!-- nav는 네비게이선 의 의미 -->
-	<nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container">
-        <div class="navber-header"><a class="navbar-brand" href="./welcome.jsp">Home</a></div>
-    </div>
-    </nav>
+<!-- 메뉴 찢어내기 -->
+	<jsp:include page="menu.jsp"/>
 	<%!
 	// 변수나 메서드 선언 시 <%! 사용
 	String greeting = "웹 쇼핑몰에 오신것을 환영합니다.";
@@ -54,8 +52,7 @@
 			%>
   		</div>
 	</div>
-	<footer class="container">
-		<p>&copy; webMarket</p>
-	</footer>
+<jsp:include page="footer.jsp"/>
+
 </body>
 </html>
