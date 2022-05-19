@@ -17,14 +17,40 @@
 </head>
 <body>
 	<jsp:include page="menu.jsp"/>
+		<!-- mt-5 : margin top-->
+	<!-- p-5 : 전체패딩5(많이) 3이 보통임-->
+	<!-- bg primary : 기본색상 -->
+	<!-- text white : 글자 하얗기 -->
+	<div class="mt-4 p-5 bg-primary text-white">
+	<!-- container : 좌우 가운데 정렬 -->
+    	<div class="container">
+	<!-- display : 글자 포인트 사이즈 -->
+        	<h1 class="display-3">
+        	<!-- 변수, 계산식, 메소드 호출결과를 문자열로 출력시 사용  -->
+				상품 목록
+        	</h1>
+    	</div>
+	</div>
 
 	<%
 	//ProductRepository repository = new ProductRepository();
 	List<Product> products = repository.getAllProducts();
-	for (Product product: products) {
-		out.println(product + "<br><br>");
-	}
 	%>
+	<div class="container">
+    <div class="row text-center">
+    	<%
+    	for (Product product: products) {
+    	%>	
+        <div class="col-md-4">
+        <h3><%= product.getName() %></h3>
+        <p><%=product.getDescription() %></p>
+        <p><%=product.getUnitPrice()%>원</p>
+        </div>
+    	<%
+    	}    	
+    	%>	
+    </div>
+	</div>
 	<jsp:include page="footer.jsp"/>
 	
 </body>

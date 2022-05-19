@@ -52,6 +52,7 @@
 			%>
   		</div>
 	</div>
+	<!-- footer Âõ¾î³»±â -->
 <jsp:include page="footer.jsp"/>
 
 </body>
