@@ -24,15 +24,39 @@
 	    <div class="container">
 	  <form name="newProduct" action="./processAddProduct.jsp" class="form-horizontal" method="post">
 	    <div class="form-grout row mt-3">
+	      <label class="col-sm-2">상품명</label>
+	      <div class="col-sm-3">
+	        <input type="text" name="name" class="form-control">
+	      </div>
+	    </div>
+	    <div class="form-grout row mt-3">
+	      <label class="col-sm-2">상품설명</label>
+	      <div class="col-sm-3">
+	        <input type="text" name="description" class="form-control">
+	      </div>
+	    </div>
+	    <div class="form-grout row mt-3">
 	      <label class="col-sm-2">상품 코드</label>
 	      <div class="col-sm-3">
 	        <input type="text" name="productId" class="form-control">
 	      </div>
 	    </div>
 	    <div class="form-grout row mt-3">
-	      <label class="col-sm-2">상품명</label>
+	      <label class="col-sm-2">제조사</label>
 	      <div class="col-sm-3">
-	        <input type="text" name="name" class="form-control">
+	        <input type="text" name="menufacturer" class="form-control">
+	      </div>
+	    </div>
+	    <div class="form-grout row mt-3">
+	      <label class="col-sm-2">분류</label>
+	      <div class="col-sm-3">
+	        <input type="text" name="category" class="form-control">
+	      </div>
+	    </div>
+	    <div class="form-grout row mt-3">
+	      <label class="col-sm-2">재고수</label>
+	      <div class="col-sm-3">
+	        <input type="text" name="unitsInStock" class="form-control">
 	      </div>
 	    </div>
 	    <div class="form-grout row mt-3">

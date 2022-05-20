@@ -33,10 +33,10 @@
     	</div>
 	</div>
 	<%
-	out.println(session.getAttribute("food"));
+/* 	out.println(session.getAttribute("food"));
 	out.println(session.getAttribute("name"));
 	out.println(session.getAttribute("age"));
-	out.println(session.getAttribute("food"));
+	out.println(session.getAttribute("food")); */
 	
 	ProductRepository repository = ProductRepository.getInstance();
 	List<Product> products = repository.getAllProducts();

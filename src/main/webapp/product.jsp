@@ -1,8 +1,9 @@
+<%@page import="dao.ProductRepository"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import= "java.util.List" %>
 <%@ page import= "dto.Product" %>
-<jsp:useBean id="repository" class="dao.ProductRepository" scope="session"></jsp:useBean>
+<%-- <jsp:useBean id="repository" class="dao.ProductRepository" scope="session"></jsp:useBean> --%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +31,12 @@
 	<%
 	// product.jsp?id=p1234 이런식으로 넘어온 값 받기
 	//념거준 ID 이런식으로 받는다. 무조건 String으로 받는다.
-	String id = request.getParameter("id");
+/* 	String id = request.getParameter("id");
 	Product product = repository.getProductById(id);
+	 */
+	String id = request.getParameter("id");
+	   ProductRepository repository = ProductRepository.getInstance();
+	   Product product = repository.getProductById(id);
 	%>
 	<div class="container">
     <div class="row">

@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <!-- import ¼Ó¼º »ç¿ë¹æ¹ı -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    <!-- import ì†ì„± ì‚¬ìš©ë°©ë²• -->
     <%@ page import= "java.util.List" %>
 <%@ page import= "dto.Product" %>
 <%@ page import= "java.util.Date" %>
@@ -11,56 +11,56 @@
 <html>
 <head>
 	<meta charset="EUC-KR">
-	<title>À¥ ¼îÇÎ¸ô¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù.</title>
+	<title>ì–´ì„œì™€ ë§Œë¬¼ìƒ</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<!-- ¸Ş´º Âõ¾î³»±â -->
+<!-- ë©”ë‰´ ì°¢ì–´ë‚´ê¸° -->
 	<jsp:include page="menu.jsp"/>
 	<%!
-	// º¯¼ö³ª ¸Ş¼­µå ¼±¾ğ ½Ã <%! »ç¿ë
-	String greeting = "À¥ ¼îÇÎ¸ô¿¡ ¿À½Å°ÍÀ» È¯¿µÇÕ´Ï´Ù.";
+	// ë³€ìˆ˜ë‚˜ ë©”ì„œë“œ ì„ ì–¸ ì‹œ <%! ì‚¬ìš©
+	String greeting = "\'ì–´ì„œì™€ ë§Œë¬¼ìƒ\'ì— ì˜¤ì‹ ê²ƒì„ í™˜ì˜í•©ë‹ˆë‹¤.";
 	String tagline = "welcome to web market!";
 	%>
 	<%
-	// ±×³É ÀÚ¹Ù·ÎÁ÷ÄÚµå ÀÛ¼º ½Ã <% »ç¿ë
-	// º¯¼ö, °è»ê½Ä, ¸Ş¼Òµå È£Ãâ°á°ú¸¦ ¹®ÀÚ¿­·Î Ãâ·Â½Ã <%= »ç¿ë
-	// out.println("<h1>hello world»õ·Î</h1>");
+	// ê·¸ëƒ¥ ìë°”ë¡œì§ì½”ë“œ ì‘ì„± ì‹œ <% ì‚¬ìš©
+	// ë³€ìˆ˜, ê³„ì‚°ì‹, ë©”ì†Œë“œ í˜¸ì¶œê²°ê³¼ë¥¼ ë¬¸ìì—´ë¡œ ì¶œë ¥ì‹œ <%= ì‚¬ìš©
+	// out.println("<h1>hello worldìƒˆë¡œ</h1>");
 	%>
 	<!-- mt-5 : margin top-->
-	<!-- p-5 : ÀüÃ¼ÆĞµù5(¸¹ÀÌ) 3ÀÌ º¸ÅëÀÓ-->
-	<!-- bg primary : ±âº»»ö»ó -->
-	<!-- text white : ±ÛÀÚ ÇÏ¾é±â -->
+	<!-- p-5 : ì „ì²´íŒ¨ë”©5(ë§ì´) 3ì´ ë³´í†µì„-->
+	<!-- bg primary : ê¸°ë³¸ìƒ‰ìƒ -->
+	<!-- text white : ê¸€ì í•˜ì–—ê¸° -->
 	<div class="mt-4 p-5 bg-primary text-white">
-	<!-- container : ÁÂ¿ì °¡¿îµ¥ Á¤·Ä -->
+	<!-- container : ì¢Œìš° ê°€ìš´ë° ì •ë ¬ -->
     	<div class="container">
-	<!-- display : ±ÛÀÚ Æ÷ÀÎÆ® »çÀÌÁî -->
+	<!-- display : ê¸€ì í¬ì¸íŠ¸ ì‚¬ì´ì¦ˆ -->
         	<h1 class="display-3">
-        	<!-- º¯¼ö, °è»ê½Ä, ¸Ş¼Òµå È£Ãâ°á°ú¸¦ ¹®ÀÚ¿­·Î Ãâ·Â½Ã »ç¿ë  -->
+        	<!-- ë³€ìˆ˜, ê³„ì‚°ì‹, ë©”ì†Œë“œ í˜¸ì¶œê²°ê³¼ë¥¼ ë¬¸ìì—´ë¡œ ì¶œë ¥ì‹œ ì‚¬ìš©  -->
 				<%=greeting%>
         	</h1>
     	</div>
 	</div>
 	<div class="container">
-	<!-- ¹®ÀÚ¿­ °¡¿îµ¥ ³õ±â -->
+	<!-- ë¬¸ìì—´ ê°€ìš´ë° ë†“ê¸° -->
 	    <div class="text-center">
 			<h3><%=	tagline	%></h3>
 			<%
-			//1ÃÊ¿¡ ÇÑ¹ø¾¿ »õ·Î°íÄ§
+			//1ì´ˆì— í•œë²ˆì”© ìƒˆë¡œê³ ì¹¨
 			response.setIntHeader("refresh", 5);
 			
 			Date today = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
-			out.println("ÇåÀçÁ¢¼Ó½Ã°£ : "+format.format(today));
+			out.println("í—Œì¬ì ‘ì†ì‹œê°„ : "+format.format(today));
 			
-			session.setAttribute("name", "±èµ¹µ¹");
+			session.setAttribute("name", "ê¹€ëŒëŒ");
 			session.setAttribute("age", 23);
 			
 			List<String> foods = new ArrayList<>();
-			foods.add("Â¥Àå¸é");
-			foods.add("¶ó¸é");
-			foods.add("ÅÁ¼öÀ°");
+			foods.add("ì§œì¥ë©´");
+			foods.add("ë¼ë©´");
+			foods.add("íƒ•ìˆ˜ìœ¡");
 			
 			session.setAttribute("food", foods);
 			session.setMaxInactiveInterval(5);
@@ -68,7 +68,7 @@
   		</div>
 	</div>
 
-	<!-- footer Âõ¾î³»±â -->
+	<!-- footer ì°¢ì–´ë‚´ê¸° -->
 <jsp:include page="footer.jsp"/>
 
 </body>
