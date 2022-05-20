@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
     <!-- import 속성 사용방법 -->
@@ -5,11 +6,12 @@
 <%@ page import= "dto.Product" %>
 <%@ page import= "java.util.Date" %>
 <%@ page import= "java.text.SimpleDateFormat" %>
+
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="EUC-KR">
-	<title>Insert title here</title>
+	<title>웹 쇼핑몰에 오신것을 환영합니다.</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
@@ -26,7 +28,6 @@
 	// 변수, 계산식, 메소드 호출결과를 문자열로 출력시 <%= 사용
 	// out.println("<h1>hello world새로</h1>");
 	%>
-	
 	<!-- mt-5 : margin top-->
 	<!-- p-5 : 전체패딩5(많이) 3이 보통임-->
 	<!-- bg primary : 기본색상 -->
@@ -47,14 +48,26 @@
 			<h3><%=	tagline	%></h3>
 			<%
 			//1초에 한번씩 새로고침
-			response.setIntHeader("refresh", 1);
+			response.setIntHeader("refresh", 5);
 			
 			Date today = new Date();
 			SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss a");
 			out.println("헌재접속시간 : "+format.format(today));
+			
+			session.setAttribute("name", "김돌돌");
+			session.setAttribute("age", 23);
+			
+			List<String> foods = new ArrayList<>();
+			foods.add("짜장면");
+			foods.add("라면");
+			foods.add("탕수육");
+			
+			session.setAttribute("food", foods);
+			session.setMaxInactiveInterval(5);
 			%>
   		</div>
 	</div>
+
 	<!-- footer 찢어내기 -->
 <jsp:include page="footer.jsp"/>
 
