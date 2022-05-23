@@ -18,7 +18,7 @@
     <script>
       function setDone(id) {
     	  $.ajax({
-    		  url: "processTogle.jsp", type: "post", data:{ "id": id },
+    		  url: "processToggle.jsp", type: "post", data:{ "id": id },
     		  success: function (data){
     			  window.location.reload();
     		  }
