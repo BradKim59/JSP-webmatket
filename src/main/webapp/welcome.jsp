@@ -20,7 +20,7 @@
 	<jsp:include page="menu.jsp"/>
 	<%!
 	// 변수나 메서드 선언 시 <%! 사용
-	String greeting = "\'어서와 만물상\'에 오신것을 환영합니다.";
+	String greeting = "환영합니다 고객님";
 	String tagline = "welcome to web market!";
 	%>
 	<%

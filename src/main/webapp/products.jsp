@@ -60,5 +60,7 @@
 	</div>
 	<jsp:include page="footer.jsp"/>
 	
+	<c:out value="Hello world" />
+	
 </body>
 </html>
