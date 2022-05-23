@@ -18,7 +18,7 @@
     <script>
       function setDone(id) {
     	  $.ajax({
-    		  url: "processToggle.jsp", type: "post", data:{ "id": id },
+    		  url: "toggleTodo.do", type: "post", data:{ "id": id },
     		  success: function (data){
     			  window.location.reload();
     		  }
@@ -31,7 +31,7 @@
     	  //postData('processAddTodo.jsp', { task:'test' });
     	  let task = $("#text").val();
     	  $.ajax({
-    		  url: "processAddTodo.jsp", type: "post", data:{ "task": task },
+    		  url: "addTodo.do", type: "post", data:{ "task": task },
     		  success: function (data){
     			  window.location.reload();
     		  }
@@ -40,7 +40,7 @@
 
       function remove(id) {
     	  $.ajax({
-    		  url: "processRemoveTodo.jsp", type: "post", data:{ "id": id },
+    		  url: "removeTodo.do", type: "post", data:{ "id": id },
     		  success: function (data){
     			  window.location.reload();
     		  }
