@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 //톰캣에 컨트롤러의 존재를 노출
-@WebServlet(name = "TodoControler", urlPatterns = {"/addTodo.do", "/toggleTodo.do", "/removeTodo.do"})
+@WebServlet(name = "TodoControler", urlPatterns = {"/addTodo.do", "/toggleTodo.do", "/removeTodo.do", "/todos"})
 public class TodoControler extends HttpServlet {
 	/**
 	 * 
@@ -21,7 +21,17 @@ public class TodoControler extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(req, resp);
+		String command = req.getRequestURI().substring(req.getContextPath().length());
+		TodoRepository repository = TodoRepository.getInstance();
+		if (command.equals("/todos")) {
+			//repository => Json 코드 작성해야 함
+            resp.setHeader("Access-Control-Allow-Headers", "Content-Type");
+            resp.setHeader("Access-Control-Allow-Origin", "*");
+			resp.setContentType("application/json");
+			resp.getWriter().print("{ \"id\":0 ,\"task\": \"빨래\" }");
+		}
+		
+		
 	}
 	TodoRepository repository = TodoRepository.getInstance();
 
